@@ -46,7 +46,10 @@ xterm -T MADIUN -e linux ubd0=MADIUN,jarkom umid=MADIUN eth0=daemon,,,switch1 me
 xterm -T GRESIK -e linux ubd0=GRESIK,jarkom umid=GRESIK eth0=daemon,,,switch6 mem=64M &
 xterm -T SIDOARJO -e linux ubd0=SIDOARJO,jarkom umid=SIDOARJO eth0=daemon,,,switch3 mem=64M &
 ```
-Lalu setting ```/etc/network/interfaces``` 
+
+Pada semua UML router, ketikkan nano /etc/sysctl.conf serta uncomment net.ipv4.ip_forward=1 . Untuk mengaktifkan perubahan baru ketikkan ```sysctl -p```.
+
+Lalu setting ```/etc/network/interfaces``` pada masing-masing uml dengan konfigurasi
 
 **SURABAYA (Sebagai Router)**
 ```
@@ -141,6 +144,73 @@ netmask 255.255.255.248
 gateway 10.151.79.121
 ```
 
+Kemudian menambahkan file ```route.sh``` di Surabaya saja, karena pada uml untuk 0.0.0.0 sudah otomatis terbuat
+```
+route add -net 192.168.1.0 netmask 255.255.255.0 gw 192.168.0.2
+route add -net 192.168.2.0 netmask 255.255.255.0 gw 192.168.0.6
+route add -net 192.168.0.8 netmask 255.255.255.248 gw 192.168.0.6
+route add -net 10.151.79.120 netmask 255.255.255.248 gw 192.168.0.2
+```
+
+Kemudian untuk kofigurasi DHCP Server pada MOJOKERTO dan DHCP RELAY pada KEDIRI, SURABAYA, dan BATU adalah 
+
+Pertama sebelum install harus melakukan ```apt-get update``` terlebih dahulu
+ 
+**Pada DHCP Server**
+Jalankan ```apt-get install isc-dhcp-server``` pada uml MOJOKERTO
+
+Lalu setting pada ```/etc/dhcp/dhcpd.conf```, dengan konfigurasi
+```
+subnet 10.151.79.0 netmask 255.255.255.0 {
+}
+
+#SIDOARJO
+subnet 192.168.1.0 netmask 255.255.255.0 {
+    range 192.168.1.2 192.168.1.254;
+    option routers 192.168.1.1;
+    option broadcast-address 192.168.1.255;
+    option domain-name-servers 202.46.129.2;
+    default-lease-time 600;
+    max-lease-time 7200;
+}
+
+#GRESIK
+subnet 192.168.2.0 netmask 255.255.255.0 {
+    range 192.168.2.2 192.168.2.254;
+    option routers 192.168.2.1;
+    option broadcast-address 192.168.2.255;
+    option domain-name-servers 202.46.129.2;
+    default-lease-time 600;
+    max-lease-time 7200;
+}
+```
+
+Kemudian juga buka ```/etc/default/isc-dhcp-server```, lalu konfigurasi seperti berikut:
+
+<img src="https://github.com/hrswcksono/Jarkom_Modul5_Lapres_D14/blob/main/img/default-server.png" >
+
+**Pada DHCP Relay**
+
+Jalankan ```apt-get install isc-dhcp-relay```pada uml KEDIRI, SURABAYA, dan BATU
+
+Kemudian buka ```/etc/default/isc-dhcp-relay``` masing-masing dengan:
+
+**BATU**
+<img src="https://github.com/hrswcksono/Jarkom_Modul5_Lapres_D14/blob/main/img/default-batu.png" >
+
+**SURABAYA**
+<img src="https://github.com/hrswcksono/Jarkom_Modul5_Lapres_D14/blob/main/img/default-sby.png" >
+
+**KEDIRI**
+<img src="https://github.com/hrswcksono/Jarkom_Modul5_Lapres_D14/blob/main/img/default-kediri.png" >
+
+Kemudian jalankan ```service isc-dhcp-relay restart``` pada uml KEDIRI, SURABAYA, dan BATU
+
+**Pada Client**
+
+Kemudian setting ```/etc/network/interfaces``` pada GRESIK dan SIDOARJO
+
+
 **SIDOARJO (Sebagai Client)**
 ```
 auto eth0
@@ -153,11 +223,10 @@ auto eth0
 iface eth0 inet dhcp
 ```
 
-Kemudian menambahkan file ```route.sh``` di Surabaya saja, karena pada uml untuk 0.0.0.0 sudah otomatis terbuat
-```
-route add -net 192.168.1.0 netmask 255.255.255.0 gw 192.168.0.2
-route add -net 192.168.2.0 netmask 255.255.255.0 gw 192.168.0.6
-route add -net 192.168.0.8 netmask 255.255.255.248 gw 192.168.0.6
-route add -net 10.151.79.120 netmask 255.255.255.248 gw 192.168.0.2
-```
+Lalu lakukan ```service networking restart``` pada keduanya :
 
+<img src="https://github.com/hrswcksono/Jarkom_Modul5_Lapres_D14/blob/main/img/snr-sido.png" >
+
+<img src="https://github.com/hrswcksono/Jarkom_Modul5_Lapres_D14/blob/main/img/snr-kdr.png" >
+
+Jika mendapatkan IP seperti gambar di atas maka sudah benar untuk seting DHCP Server dan DHCP Relay.
