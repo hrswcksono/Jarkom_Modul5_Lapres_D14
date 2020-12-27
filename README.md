@@ -214,13 +214,13 @@ Kemudian jalankan ```service isc-dhcp-relay restart``` pada uml KEDIRI, SURABAYA
 Kemudian setting ```/etc/network/interfaces``` pada GRESIK dan SIDOARJO
 
 
-**SIDOARJO (Sebagai Client)**
+**SIDOARJO**
 ```
 auto eth0
 iface eth0 inet dhcp
 ```
 
-**GRESIK (Sebagai Client)**
+**GRESIK**
 ```
 auto eth0
 iface eth0 inet dhcp
