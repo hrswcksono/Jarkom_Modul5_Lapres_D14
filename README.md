@@ -3,7 +3,7 @@
 ### KELOMPOK        : D14
 ANGGOTA         :
 
-* Muhammad Haris W.     (05111840000029)
+* Muhammad Haris W      (05111840000029)
 * Vieri Fath Ayuba      (05111840000153)
 
 **Kelompok kami pembagian subnet menggunakan metode vlsm**
@@ -211,7 +211,7 @@ Kemudian jalankan ```service isc-dhcp-relay restart``` pada uml KEDIRI, SURABAYA
 
 **Pada Client**
 
-Kemudian setting ```/etc/network/interfaces``` pada GRESIK dan SIDOARJO
+Kemudian buka ```/etc/network/interfaces``` pada GRESIK dan SIDOARJO
 
 
 **SIDOARJO**
