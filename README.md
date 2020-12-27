@@ -48,7 +48,7 @@ xterm -T SIDOARJO -e linux ubd0=SIDOARJO,jarkom umid=SIDOARJO eth0=daemon,,,swit
 ```
 Lalu setting ```/etc/network/interfaces``` 
 
-**SURABAYA**
+**SURABAYA (Sebagai Router)**
 ```
 auto eth0
 iface eth0 inet static
@@ -67,7 +67,7 @@ address 192.168.0.5
 netmask 255.255.255.252
 ```
 
-**BATU**
+**BATU (Sebagai Router)**
 ```
 auto eth0
 iface eth0 inet static
@@ -86,7 +86,7 @@ address 192.168.1.1
 netmask 255.255.255.0
 ```
 
-**KEDIRI**
+**KEDIRI (Sebagai Router)**
 ```
 auto eth0
 iface eth0 inet static
@@ -105,7 +105,7 @@ address 192.168.2.1
 netmask 255.255.255.0
 ```
 
-**MADIUN**
+**MADIUN (Sebagai Web Server)**
 ```
 auto eth0
 iface eth0 inet static
@@ -114,7 +114,7 @@ netmask 255.255.255.248
 gateway 192.168.0.9
 ```
 
-**PROBOLINGGO**
+**PROBOLINGGO (Sebagai Web Server)**
 ```
 auto eth0
 iface eth0 inet static
@@ -123,7 +123,7 @@ netmask 255.255.255.248
 gateway 192.168.0.9
 ```
 
-**MALANG**
+**MALANG (Sebagai DNS Server)**
 ```
 auto eth0
 iface eth0 inet static
@@ -132,7 +132,7 @@ netmask 255.255.255.248
 gateway 10.151.79.121
 ```
 
-**MOJOKERTO**
+**MOJOKERTO (Sebagai DNS Server)**
 ```
 auto eth0
 iface eth0 inet static
@@ -141,19 +141,23 @@ netmask 255.255.255.248
 gateway 10.151.79.121
 ```
 
-**SIDOARJO**
+**SIDOARJO (Sebagai Client)**
 ```
 auto eth0
 iface eth0 inet dhcp
 ```
 
-**GRESIK**
+**GRESIK (Sebagai Client)**
 ```
 auto eth0
 iface eth0 inet dhcp
 ```
 
-
-
-
+Kemudian menambahkan file ```route.sh``` di Surabaya saja, karena pada uml untuk 0.0.0.0 sudah otomatis terbuat
+```
+route add -net 192.168.1.0 netmask 255.255.255.0 gw 192.168.0.2
+route add -net 192.168.2.0 netmask 255.255.255.0 gw 192.168.0.6
+route add -net 192.168.0.8 netmask 255.255.255.248 gw 192.168.0.6
+route add -net 10.151.79.120 netmask 255.255.255.248 gw 192.168.0.2
+```
 
