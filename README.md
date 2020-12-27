@@ -196,12 +196,15 @@ Jalankan ```apt-get install isc-dhcp-relay```pada uml KEDIRI, SURABAYA, dan BATU
 Kemudian buka ```/etc/default/isc-dhcp-relay``` masing-masing dengan:
 
 **BATU**
+
 <img src="https://github.com/hrswcksono/Jarkom_Modul5_Lapres_D14/blob/main/img/default-batu.png" >
 
 **SURABAYA**
+
 <img src="https://github.com/hrswcksono/Jarkom_Modul5_Lapres_D14/blob/main/img/default-sby.png" >
 
 **KEDIRI**
+
 <img src="https://github.com/hrswcksono/Jarkom_Modul5_Lapres_D14/blob/main/img/default-kediri.png" >
 
 Kemudian jalankan ```service isc-dhcp-relay restart``` pada uml KEDIRI, SURABAYA, dan BATU
