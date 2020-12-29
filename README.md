@@ -326,7 +326,7 @@ Jika mendapatkan IP seperti gambar di atas maka sudah benar untuk seting DHCP Se
 
 - Kita bisa mengakses pada pukul 17.00 hingga pukul 07.00 setiap harinya.
 
-
+<img src="https://github.com/hrswcksono/Jarkom_Modul5_Lapres_D14/blob/main/img/test5A.JPG" >
 <img src="https://github.com/hrswcksono/Jarkom_Modul5_Lapres_D14/blob/main/img/test5B.JPG" >
 
 
@@ -367,6 +367,8 @@ Jika mendapatkan IP seperti gambar di atas maka sudah benar untuk seting DHCP Se
 #### TESTING
 
 - Semua catatan yang didrop akan otomatis muncul pada UML yang bersangkutan.
+
+<img src="https://github.com/hrswcksono/Jarkom_Modul5_Lapres_D14/blob/main/img/test7.JPG" >
 
 
 
