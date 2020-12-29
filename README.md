@@ -6,7 +6,7 @@ ANGGOTA         :
 * Muhammad Haris W      (05111840000029)
 * Vieri Fath Ayuba      (05111840000153)
 
-**Kelompok kami pembagian subnet menggunakan metode vlsm**
+**Kelompok kami pembagian subnet menggunakan metode VLSM**
 
 <img src="https://github.com/hrswcksono/Jarkom_Modul5_Lapres_D14/blob/main/img/topo.png" >
 
@@ -185,6 +185,7 @@ subnet 192.168.2.0 netmask 255.255.255.0 {
 }
 ```
 
+
 Kemudian juga buka ```/etc/default/isc-dhcp-server```, lalu konfigurasi seperti berikut:
 
 <img src="https://github.com/hrswcksono/Jarkom_Modul5_Lapres_D14/blob/main/img/default-server.png" >
@@ -233,3 +234,71 @@ Lalu lakukan ```service networking restart``` pada keduanya :
 <img src="https://github.com/hrswcksono/Jarkom_Modul5_Lapres_D14/blob/main/img/snr-kdr.png" >
 
 Jika mendapatkan IP seperti gambar di atas maka sudah benar untuk seting DHCP Server dan DHCP Relay.
+
+
+## Jawaban Soal Praktikum Jarkom Modul 5
+
+### Soal No. 1
+#### 1. Agar topologi yang kalian buat dapat mengakses keluar, kalian diminta untuk mengkonfigurasi SURABAYA menggunakan iptables, namun Bibah tidak ingin kalian menggunakan MASQUERADE.
+
+- Pada UML Surabaya membuat file dengan perintah nano soal1.sh yang berisi :
+
+<img src="https://github.com/hrswcksono/Jarkom_Modul5_Lapres_D14/blob/main/img/1.JPG" >
+
+- Jalankan file tersebut dengan perintah bash soal1.sh.
+- Untuk mengeceknya, kami tes dengan ping google.com pada UML Surabaya.
+
+
+
+### Soal No. 2
+#### 2. Kalian diminta untuk mendrop semua akses SSH dari luar Topologi (UML) Kalian pada server yang memiliki ip DMZ (DHCP dan DNS SERVER) pada SURABAYA demi menjaga keamanan.
+
+
+- Pada UML Surabaya membuat file dengan perintah nano soal2.sh yang berisi :
+
+<img src="https://github.com/hrswcksono/Jarkom_Modul5_Lapres_D14/blob/main/img/2.JPG" >
+
+- Jalankan file tersebut dengan perintah bash soal2.sh.
+
+
+### Soal No. 3
+#### 3. Karena tim kalian maksimal terdiri dari 3 orang, Bibah meminta kalian untuk membatasi DHCP dan DNS server hanya boleh menerima maksimal 3 koneksi ICMP secara bersamaan yang berasal dari mana saja menggunakan iptables pada masing masing server, selebihnya akan di DROP.
+
+- Pada UML Malang dan Mojokerto membuat file sebagai berikut :
+
+<img src="https://github.com/hrswcksono/Jarkom_Modul5_Lapres_D14/blob/main/img/3A.JPG" >
+<img src="https://github.com/hrswcksono/Jarkom_Modul5_Lapres_D14/blob/main/img/3B.JPG" >
+
+- Kemudian, jalankan file tersebut dengan perintah bash no3.sh 
+
+
+### Soal No. 4
+#### 4. Akses dari subnet SIDOARJO hanya diperbolehkan pada pukul 07.00 - 17.00 pada hari Senin sampai Jumat.
+
+- Pada UML Malang membuat file dengan perintah nano no4.sh sebagai berikut :
+
+<img src="https://github.com/hrswcksono/Jarkom_Modul5_Lapres_D14/blob/main/img/4A.JPG" >
+
+- Kemudian, jalankan file tersebut dengan perintah bash no4.sh.
+
+### Soal No. 5
+#### 5. Akses dari subnet GRESIK hanya diperbolehkan pada pukul 17.00 hingga pukul 07.00 setiap harinya.
+
+- Pada UML Malang membuat file dengan perintah nano no5.sh sebagai berikut :
+
+<img src="https://github.com/hrswcksono/Jarkom_Modul5_Lapres_D14/blob/main/img/5A.JPG" >
+
+- Kemudian, jalankan file tersebut dengan perintah bash no5.sh.
+
+
+### Soal No. 6
+#### 6. SURABAYA disetting sehingga setiap request dari client yang mengakses DNS Server akan didistribusikan secara bergantian pada PROBOLINGGO port 80 dan MADIUN port 80.
+
+- Pada UML Surabaya, Kediri, Batu membuat file dengan perintah nano no6.sh yang berisi:
+
+
+<img src="https://github.com/hrswcksono/Jarkom_Modul5_Lapres_D14/blob/main/img/5A.JPG" >
+
+
+
+
