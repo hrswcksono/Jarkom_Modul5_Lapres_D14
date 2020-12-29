@@ -245,9 +245,12 @@ Jika mendapatkan IP seperti gambar di atas maka sudah benar untuk seting DHCP Se
 
 <img src="https://github.com/hrswcksono/Jarkom_Modul5_Lapres_D14/blob/main/img/1.JPG" >
 
+#### TESTING 
+
 - Jalankan file tersebut dengan perintah bash soal1.sh.
 - Untuk mengeceknya, kami tes dengan ping google.com pada UML Surabaya.
 
+<img src="https://github.com/hrswcksono/Jarkom_Modul5_Lapres_D14/blob/main/img/test1.JPG" >
 
 
 ### Soal No. 2
@@ -260,6 +263,16 @@ Jika mendapatkan IP seperti gambar di atas maka sudah benar untuk seting DHCP Se
 
 - Jalankan file tersebut dengan perintah bash soal2.sh.
 
+#### TESTING :
+
+- Untuk mengeceknya, di UML Malang ketik perintah nc -l -p 22.
+
+- Buka terminal Putty, ketikkan printah nc 10.151.79.122 22. 
+
+- Pada terminal Putty ini ketikan ‘terserah’, tidak akan muncul hasil yang sama di UML Malang karena paket didrop.
+
+<img src="https://github.com/hrswcksono/Jarkom_Modul5_Lapres_D14/blob/main/img/test2A.JPG" >
+<img src="https://github.com/hrswcksono/Jarkom_Modul5_Lapres_D14/blob/main/img/test2B.JPG" >
 
 ### Soal No. 3
 #### 3. Karena tim kalian maksimal terdiri dari 3 orang, Bibah meminta kalian untuk membatasi DHCP dan DNS server hanya boleh menerima maksimal 3 koneksi ICMP secara bersamaan yang berasal dari mana saja menggunakan iptables pada masing masing server, selebihnya akan di DROP.
@@ -271,6 +284,13 @@ Jika mendapatkan IP seperti gambar di atas maka sudah benar untuk seting DHCP Se
 
 - Kemudian, jalankan file tersebut dengan perintah bash no3.sh 
 
+#### TESTING
+
+- Untuk mengeceknya, lakukan ping ke IP Malang atau IP Mojokerto dari 4 UML berbeda.
+
+- Hasilnya nanti salah satu UML tidak bisa melakukan ping ke IP Malang atau IP Mojokerto.
+
+<img src="https://github.com/hrswcksono/Jarkom_Modul5_Lapres_D14/blob/main/img/test3.JPG" >
 
 ### Soal No. 4
 #### 4. Akses dari subnet SIDOARJO hanya diperbolehkan pada pukul 07.00 - 17.00 pada hari Senin sampai Jumat.
@@ -281,6 +301,16 @@ Jika mendapatkan IP seperti gambar di atas maka sudah benar untuk seting DHCP Se
 
 - Kemudian, jalankan file tersebut dengan perintah bash no4.sh.
 
+#### TESTING
+- Untuk mengeceknya, lakukan ping ke IP Malang dari UML Sidoarjo.
+
+- Kita bisa mengakses pada hari Senin-Jumat pada pukul 07:00-17:00.
+
+<img src="https://github.com/hrswcksono/Jarkom_Modul5_Lapres_D14/blob/main/img/test4A.JPG" >
+
+<img src="https://github.com/hrswcksono/Jarkom_Modul5_Lapres_D14/blob/main/img/test4B.JPG" >
+
+
 ### Soal No. 5
 #### 5. Akses dari subnet GRESIK hanya diperbolehkan pada pukul 17.00 hingga pukul 07.00 setiap harinya.
 
@@ -289,6 +319,15 @@ Jika mendapatkan IP seperti gambar di atas maka sudah benar untuk seting DHCP Se
 <img src="https://github.com/hrswcksono/Jarkom_Modul5_Lapres_D14/blob/main/img/5A.JPG" >
 
 - Kemudian, jalankan file tersebut dengan perintah bash no5.sh.
+
+#### TESTING
+
+- Untuk mengeceknya, lakukan ping ke IP Malang dari UML Sidoarjo.
+
+- Kita bisa mengakses pada pukul 17.00 hingga pukul 07.00 setiap harinya.
+
+
+<img src="https://github.com/hrswcksono/Jarkom_Modul5_Lapres_D14/blob/main/img/test5B.JPG" >
 
 
 ### Soal No. 6
@@ -301,6 +340,18 @@ Jika mendapatkan IP seperti gambar di atas maka sudah benar untuk seting DHCP Se
 <img src="https://github.com/hrswcksono/Jarkom_Modul5_Lapres_D14/blob/main/img/6B.JPG" >
 <img src="https://github.com/hrswcksono/Jarkom_Modul5_Lapres_D14/blob/main/img/6C.JPG" >
 
+#### TESTING
+
+- Untuk mengeceknya, di UML Probolinggo, ketik perintah nc -l -p 80.
+- Buka 2 terminal Putty, ketikkan printah nc 10.151.79.122 22 pada kedua terminal. 
+
+- Di Putty ini ketikan ‘terserah’, nanti akan muncul hasil yang sama di Probolinggo.
+
+- <img src="https://github.com/hrswcksono/Jarkom_Modul5_Lapres_D14/blob/main/img/test6.JPG" >
+
+
+
+
 ### Soal No. 7
 #### 7. Bibah ingin agar semua paket didrop oleh firewall (dalam topologi) tercatat dalam log pada setiap UML yang memiliki aturan drop.
 
@@ -312,4 +363,10 @@ Jika mendapatkan IP seperti gambar di atas maka sudah benar untuk seting DHCP Se
 <img src="https://github.com/hrswcksono/Jarkom_Modul5_Lapres_D14/blob/main/img/7C.JPG" >
 
 - Jalankan file tersebut dengan perintah bash no7.sh.
+
+#### TESTING
+
+- Semua catatan yang didrop akan otomatis muncul pada UML yang bersangkutan.
+
+
 
