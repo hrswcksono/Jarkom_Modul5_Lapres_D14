@@ -297,8 +297,19 @@ Jika mendapatkan IP seperti gambar di atas maka sudah benar untuk seting DHCP Se
 - Pada UML Surabaya, Kediri, Batu membuat file dengan perintah nano no6.sh yang berisi:
 
 
-<img src="https://github.com/hrswcksono/Jarkom_Modul5_Lapres_D14/blob/main/img/5A.JPG" >
+<img src="https://github.com/hrswcksono/Jarkom_Modul5_Lapres_D14/blob/main/img/6.JPG" >
+<img src="https://github.com/hrswcksono/Jarkom_Modul5_Lapres_D14/blob/main/img/6B.JPG" >
+<img src="https://github.com/hrswcksono/Jarkom_Modul5_Lapres_D14/blob/main/img/6C.JPG" >
+
+### Soal No. 7
+#### 7. Bibah ingin agar semua paket didrop oleh firewall (dalam topologi) tercatat dalam log pada setiap UML yang memiliki aturan drop.
 
 
+- Pada UML Surabaya, Malang, Mojokerto membuat file dengan perintah nano no7.sh sebagai berikut :
 
+<img src="https://github.com/hrswcksono/Jarkom_Modul5_Lapres_D14/blob/main/img/7.JPG" >
+<img src="https://github.com/hrswcksono/Jarkom_Modul5_Lapres_D14/blob/main/img/7B.JPG" >
+<img src="https://github.com/hrswcksono/Jarkom_Modul5_Lapres_D14/blob/main/img/7C.JPG" >
+
+- Jalankan file tersebut dengan perintah bash no7.sh.
 
